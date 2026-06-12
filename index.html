@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CoopAgro PR - Futuro Sustentável</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header id="cabecalho">
+        <div class="container menu-navegacao">
+            
+            <div class="logo-area">
+                <h1>CoopAgro <span>PR</span></h1>
+            </div>
+
+            <div class="controles-topo">
+                <button id="btn-modo-escuro">🌙 Escuro</button>
+                <button id="btn-menu-mobile">☰</button>
+            </div>
+
+            <nav id="menu-links">
+                <a href="#inicio">Início</a>
+                <a href="#tecnologias">Níveis de Manejo</a>
+                <a href="#simulador" class="btn-destaque">Simulador</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="inicio" class="secao-inicio">
+            <div class="container">
+                <h2>Tecnologia e Natureza no <br><span>Agronegócio Paranaense</span></h2>
+                <p>Um projeto educativo desenvolvido para provar, na prática, que é possível produzir mais alimentos enquanto preservamos a água e o solo do nosso estado, aliando ciência e campo.</p>
+                <br>
+                <a href="#simulador" class="btn-verde-grande">Testar o Simulador Agronômico</a>
+            </div>
+        </section>
+
+        <section id="tecnologias" class="secao-tecnologias">
+            <div class="container">
+                <h2 class="titulo-secao">Conheça os Níveis de Tecnologia</h2>
+                <p class="subtitulo-secao">Leia as explicações abaixo para entender como cada técnica impacta o meio ambiente antes de testá-las no nosso Simulador:</p>
+
+                <div class="grid-cards">
+                    <div class="card">
+                        <div class="cabecalho-card">
+                            <h3>1. Manejo Convencional</h3>
+                            <button class="btn-ouvir" data-audio="audio-convencional">🔊 Ouvir</button>
+                            <audio id="audio-convencional" src="assets/audio/convencional.mp3"></audio>
+                        </div>
+                        <p class="texto-geografia">
+                            O geógrafo Milton Santos explica que o espaço geográfico muda conforme as técnicas de cada época. O <strong>Manejo Convencional</strong> representa as técnicas do passado. Ao arar e revirar a terra constantemente, o solo fica exposto ao sol e às chuvas fortes, causando a erosão e a perda de nutrientes. No simulador, você verá que essa opção exige mais recursos naturais e produz menos, pois não protege o meio ambiente.
+                        </p>
+                    </div>
+
+                    <div class="card">
+                        <div class="cabecalho-card">
+                            <h3>2. Plantio Direto</h3>
+                            <button class="btn-ouvir" data-audio="audio-direto">🔊 Ouvir</button>
+                            <audio id="audio-direto" src="assets/audio/direto.mp3"></audio>
+                        </div>
+                        <p class="texto-geografia">
+                            A evolução da técnica transforma nossa relação com a natureza. No <strong>Plantio Direto (Média Tecnologia)</strong>, o agricultor não revolve a terra. Ele planta a nova semente sobre a palhada seca da colheita anterior. Essa camada funciona como um escudo protetor contra a erosão e mantém a umidade da chuva presa na terra. Ao escolher essa opção no simulador, você notará uma grande economia de água e um aumento saudável na colheita.
+                        </p>
+                    </div>
+
+                    <div class="card">
+                        <div class="cabecalho-card">
+                            <h3>3. Agricultura 4.0</h3>
+                            <button class="btn-ouvir" data-audio="audio-agro40">🔊 Ouvir</button>
+                            <audio id="audio-agro40" src="assets/audio/agro40.mp3"></audio>
+                        </div>
+                        <p class="texto-geografia">
+                            Aqui atingimos o que Milton Santos chamou de "meio técnico-científico-informacional". A <strong>Agricultura 4.0 (Máxima Tecnologia)</strong> une o campo à era digital. Usando sensores no solo, satélites e dados de computador, o produtor sabe exatamente onde colocar cada gota de água e cada semente. No simulador, essa técnica mostrará a capacidade máxima de produção aliada ao desperdício zero de recursos vitais.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="simulador" class="secao-simulador">
+            <div class="container">
+                <h2 class="titulo-secao">Simulador de Produtividade</h2>
+                <p class="subtitulo-secao"><strong>Coloque a teoria em prática!</strong><br> Preencha seus dados, escolha uma das técnicas que você acabou de ler acima e veja os resultados reais gerados pelo nosso sistema.</p>
+
+                <div class="caixa-formulario">
+                    <form id="form-simulador">
+                        <div class="campo">
+                            <label for="nome">Qual é o seu nome completo?</label>
+                            <input type="text" id="nome" placeholder="Ex: Kaio Daniel da Costa" required>
+                        </div>
+
+                        <div class="campo">
+                            <label for="area">Tamanho da sua área (Hectares):</label>
+                            <input type="number" id="area" placeholder="Ex: 50" min="1" required>
+                        </div>
+
+                        <div class="campo">
+                            <label for="manejo">Selecione o nível tecnológico para simular:</label>
+                            <select id="manejo" required>
+                                <option value="" disabled selected>Escolha uma opção...</option>
+                                <option value="convencional">1. Manejo Convencional (Baixa tecnologia)</option>
+                                <option value="direto">2. Plantio Direto (Média tecnologia)</option>
+                                <option value="agro40">3. Agricultura 4.0 (Máxima tecnologia e Sensores)</option>
+                            </select>
+                        </div>
+
+                        <button type="submit" id="btn-calcular" class="btn-verde-grande">Gerar meu Relatório</button>
+                    </form>
+
+                    <div id="mensagem-carregando" class="escondido">
+                        <p>⏳ Aguarde... O sistema está processando as informações...</p>
+                    </div>
+
+                    <div id="resultado-relatorio" class="escondido">
+                        </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="rodape">
+        <div class="container grid-rodape">
+            <div class="rodape-esq">
+                <p><strong>CoopAgro PR</strong></p>
+                <p>Projeto Agrinho 2026 - Categoria Programação</p>
+            </div>
+            <div class="rodape-dir">
+                <p><strong>Desenvolvido por Kaio Daniel de Souza da Costa</strong></p>
+                <p>Colégio Estadual Professor Ivone Soares Castanharo</p>
+                <p>Núcleo Regional de Campo Mourão, Paraná</p>
+                <p>© 2026 CoopAgro PR. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
